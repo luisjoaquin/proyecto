@@ -31,6 +31,7 @@ namespace proyecto
             }
             else
             {
+                MessageBox.Show(" incorrecto");
                 Close();
             }
         }

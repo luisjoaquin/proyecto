@@ -59,6 +59,7 @@ namespace proyecto
         {
             textBox1.Text = "";
             textBox2.Text = "";
+            
         }
 
         private void vendedor2_Load(object sender, EventArgs e)
@@ -115,7 +116,9 @@ namespace proyecto
                 venta.Add(temp);
                 actualizardaetalles();
                 aproducto();
-                
+                calcualarsubtototal();
+
+               
             }
 
         }
@@ -133,6 +136,75 @@ namespace proyecto
             dataGridView2.Refresh();
             dataGridView2.DataSource = venta;
             dataGridView2.Refresh();
+        }
+        public void calcualarsubtototal()
+        {
+            float subtotal = 0;
+            for (int x = 0; x < venta.Count; x++)
+            {
+                subtotal = subtotal + venta[x].Total;
+            }
+            label7.Text = Convert.ToString(subtotal);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            float cambio = 0;
+            float dinero = float.Parse(textBox4.Text);
+            float subtotal = float.Parse(label7.Text);
+            if (dinero < subtotal)
+            {
+                MessageBox.Show("no se puede realizar operaciones");
+            }
+            else
+            {
+                cambio = dinero - subtotal;
+                label8.Text = Convert.ToString(cambio);
+            }
+
+            
+            
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            actualizararchivoproducto();
+            registrardeallesventa();
+        }
+        public void actualizararchivoproducto()
+        {
+            string nombredelarchivo = "producto.txt";
+            FileStream stream = new FileStream(nombredelarchivo, FileMode.Create, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(stream);
+            for (int i = 0; i< venta.Count; i++)
+            {
+                writer.WriteLine(inve[i].Codigo);
+                writer.WriteLine(inve[i].Nombre);
+                writer.WriteLine(inve[i].Existencia);
+                writer.WriteLine(inve[i].Precio);
+                writer.WriteLine(inve[i].Costo);
+            }
+            writer.Close();
+        }
+        public void registrardeallesventa()
+        {
+            string archivo = "detalle.txt";
+            FileStream stream = new FileStream(archivo, FileMode.Append, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(stream);
+            //Generare un codigo aleatorio
+            Random rnd = new Random();
+            string codigoDeVenta = Convert.ToString(rnd.Next(999999999)); // me da un numero de 0 a 99999999 para que la probabildad sea poca de que me de un numero igual
+            writer.WriteLine(codigoDeVenta);
+            // si estos campos estan llenos procedo a guardar los datos
+            for (int y = 0; y < venta.Count; y++)
+            {
+                writer.WriteLine(venta[y].Producto);
+                writer.WriteLine(venta[y].Precio);
+                writer.WriteLine(venta[y].Existencias);
+                writer.WriteLine(venta[y].Total);
+                
+            }
+            writer.WriteLine("-1");
         }
     }
   

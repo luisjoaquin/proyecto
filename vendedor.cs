@@ -45,6 +45,7 @@ namespace proyecto
             }
             else
             {
+                MessageBox.Show("no se puede ralizar transaccion ");
                 Close();
             }
         }
