@@ -10,29 +10,29 @@ using System.Windows.Forms;
 
 namespace proyecto
 {
-    public partial class Form1 : Form
+    public partial class administrador : Form
     {
-        public Form1()
+        public administrador()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            administrador a = new administrador();
-            a.Show();
-
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            vendedor b = new vendedor();
-            b.Show();
+            if ((textBox2.Text == "h")&&(textBox1.Text =="g"))
+            {
+            administrador2 h = new administrador2();
+            h.Show();
+            }
+            else
+            {
+                Close();
+            }
         }
     }
 }

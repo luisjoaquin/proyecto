@@ -7,3 +7,7 @@ c:\users\luis alvarez\documents\visual studio 2012\Projects\proyecto\proyecto\ob
 c:\users\luis alvarez\documents\visual studio 2012\Projects\proyecto\proyecto\obj\Debug\proyecto.csproj.GenerateResource.Cache
 c:\users\luis alvarez\documents\visual studio 2012\Projects\proyecto\proyecto\obj\Debug\proyecto.exe
 c:\users\luis alvarez\documents\visual studio 2012\Projects\proyecto\proyecto\obj\Debug\proyecto.pdb
+c:\users\luis alvarez\documents\visual studio 2012\Projects\proyecto\proyecto\obj\Debug\proyecto.administrador.resources
+c:\users\luis alvarez\documents\visual studio 2012\Projects\proyecto\proyecto\obj\Debug\proyecto.vendedor.resources
+c:\users\luis alvarez\documents\visual studio 2012\Projects\proyecto\proyecto\obj\Debug\proyecto.administrador2.resources
+C:\Users\Luis Alvarez\Documents\Visual Studio 2012\Projects\proyecto\proyecto\obj\Debug\proyecto.vendedor2.resources
